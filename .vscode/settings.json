@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "C:\\Users\\kimha\\.conda\\envs\\pragmatic\\python.exe",
+    "python.autoComplete.addBrackets": true,
+    "python.languageServer": "Pylance",
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.indexing": true
+    
+}
