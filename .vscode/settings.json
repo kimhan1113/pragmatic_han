@@ -5,5 +5,10 @@
     "python.analysis.completeFunctionParens": true,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.indexing": true,
+
+    "files.associations": {
+        "**/templates/*.html": "html",
+        "**/templates/*": "django-txt"
+    }
     
 }
