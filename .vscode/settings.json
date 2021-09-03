@@ -8,7 +8,8 @@
 
     "files.associations": {
         "**/templates/*.html": "html",
-        "**/templates/*": "django-txt"
+        "**/templates/*": "django-txt",
+        "*.html" : "html"
     }
     
 }

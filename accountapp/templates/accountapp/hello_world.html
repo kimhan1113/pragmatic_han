@@ -8,6 +8,17 @@
             testing
         </h1>
 
+        <form action="/account/hello_world/" method="POST" >
+            {% csrf_token %}
+            <input type="submit" value="POST" class="btn btn-primary">
+        </form>
+
+        <h1>
+            {{text}}
+        </h1>
+
+        
+
     </div>
 {% endblock  %}
 
