@@ -1,5 +1,6 @@
 
 
+
 from django.forms import GenericIPAddressField, models
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -11,7 +12,6 @@ from django.views.generic import CreateView
 from accountapp.models import HelloWorld
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
 
 
 # Create your views here.
