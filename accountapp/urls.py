@@ -1,6 +1,6 @@
 
 from django.contrib.auth.views import LoginView, LogoutView
-from accountapp.views import AccountCreateView, AccountDetailView, AccountUpdateView, hello_world
+from accountapp.views import AccountCreateView, AccountDeleteView, AccountDetailView, AccountUpdateView, hello_world
 from django.urls import include,path
 
 
@@ -13,5 +13,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('detail/<int:pk>', AccountDetailView.as_view(), name='detail'),
     path('update/<int:pk>', AccountUpdateView.as_view(), name='update'),
+    path('delete/<int:pk>', AccountDeleteView.as_view(), name='delete'),
 ]
 
