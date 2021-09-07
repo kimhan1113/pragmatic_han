@@ -1,5 +1,8 @@
+from django.utils.decorators import method_decorator
 
+from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
+from django.contrib.auth.decorators import login_required
 from django.forms import GenericIPAddressField, models
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -10,13 +13,17 @@ from accountapp.models import HelloWorld
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+has_ownership = [account_ownership_required, login_required]
 
 # Create your views here.
 
 # vscode는 classview 상속받을 떄 generic으로 찾자!!!
 
-
+# 함수만 된다 즉 클래스 함수(메소드)에서는 안됨!!
+@login_required
 def hello_world(request):
+
+    # if request.user.is_authenticated:
 
     if request.method == "POST":
 
@@ -35,6 +42,8 @@ def hello_world(request):
         hello_world_list = HelloWorld.objects.all()
         return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
 
+    # else:
+    #     return HttpResponseRedirect(reverse('accountapp:login'))
     # return HttpResponse('Hello world!')
 
 
@@ -44,11 +53,14 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
+
 class AccountDetailView(DetailView):
     model = User
     template_name = "accountapp/detail.html"
     context_object_name = 'target_user'
 
+@method_decorator(has_ownership, 'get')
+@method_decorator(has_ownership, 'post')
 class AccountUpdateView(UpdateView):
     model = User
     form_class = AccountUpdateForm
@@ -56,7 +68,8 @@ class AccountUpdateView(UpdateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/update.html'
 
-
+@method_decorator(has_ownership, 'get')
+@method_decorator(has_ownership, 'post')
 class AccountDeleteView(DeleteView):
     model = User
     success_url = reverse_lazy('accountapp:login')
