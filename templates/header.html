@@ -22,7 +22,8 @@
         <a href="{% url 'accountapp:detail' pk=user.pk %}" style="text-decoration:none">
             <span>MyPage</span>
         </a>
-        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" style="text-decoration:none">
+<!--        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" style="text-decoration:none">-->
+        <a href="{% url 'accountapp:logout' %}?next={% url 'accountapp:hello_world' %}" style="text-decoration:none">
             <span>logout</span>
         </a>
 

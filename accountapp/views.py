@@ -20,7 +20,9 @@ has_ownership = [account_ownership_required, login_required]
 # vscode는 classview 상속받을 떄 generic으로 찾자!!!
 
 # 함수만 된다 즉 클래스 함수(메소드)에서는 안됨!!
-@login_required
+# 기존 코드는 다 주석으로 남겨둔다!!
+
+# @login_required
 def hello_world(request):
 
     # if request.user.is_authenticated:
@@ -53,7 +55,8 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
-
+@method_decorator(has_ownership, 'get')
+# @method_decorator(has_ownership, 'post')
 class AccountDetailView(DetailView):
     model = User
     template_name = "accountapp/detail.html"
