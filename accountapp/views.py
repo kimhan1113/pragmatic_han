@@ -55,6 +55,12 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
+    # def form_valid(self, form):
+    #     temp_profile = form.save(commit=False)
+    #     temp_profile.user = self.request.user
+    #     temp_profile.save()
+    #     return super().form_valid(form)
+
 @method_decorator(has_ownership, 'get')
 # @method_decorator(has_ownership, 'post')
 class AccountDetailView(DetailView):
