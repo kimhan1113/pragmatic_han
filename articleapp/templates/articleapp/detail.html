@@ -15,26 +15,32 @@
             <img style="width :100%; border-radius: 1rem; margin:2rem 0;"
                     src="{{target_article.image.url}}" alt="">
 
-            <p>
-                {{ target_article.content }}
-            </p>
+            <div class="text-left">
+                {{ target_article.content | safe }}
+            </div>
 
 
             {% if target_article.writer == user %}
-            <a href="{% url 'articleapp:update' pk=target_article.pk %}" class="btn btn-primary rounded-pill pt-4 col-3">
+            <div class="text-center">
+                <a href="{% url 'articleapp:update' pk=target_article.pk %}" class="btn btn-primary rounded-pill col-4 mt-3">
 
-                <p style="font-size: 1.2rem;">
-                    Update
-                </p>
+                    <p style="height: 0.5rem; font-size: 1.1rem;">
+                        Update
+                    </p>
 
-            </a>
-            &nbsp
-            <a href="{% url 'articleapp:delete' pk=target_article.pk %}" class="btn btn-danger rounded-pill pt-4 col-3">
+                </a>
+                &nbsp
+                <a href="{% url 'articleapp:delete' pk=target_article.pk %}" class="btn btn-danger rounded-pill col-4 mt-3">
 
-                <p style="font-size: 1.2rem;">
-                    Delete
-                </p>
-            </a>
+                    <p style="height: 0.5rem; font-size: 1.1rem;">
+                        Delete
+                    </p>
+                </a>
+            </div>
+
+
+
+
             {% endif %}
             <hr>
 
