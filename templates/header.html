@@ -15,6 +15,10 @@
             <span>Projects</span>
         </a>
 
+        <a href="{% url 'subscribeapp:list' %}" class="prgmatic_header_nav">
+            <span>Subscription</span>
+        </a>
+
         {% if not user.is_authenticated %}
 <!--         style="text-decoration:none"-->
 
@@ -30,7 +34,7 @@
             <span>MyPage</span>
         </a>
 <!--        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" style="text-decoration:none">-->
-        <a href="{% url 'accountapp:logout' %}?next={% url 'accountapp:hello_world' %}" class="prgmatic_header_nav">
+        <a href="{% url 'accountapp:logout' %}?next={% url 'articleapp:list' %}" class="prgmatic_header_nav">
             <span>logout</span>
         </a>
 
