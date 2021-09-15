@@ -18,9 +18,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
+from articleapp.views import ArticleListView
+
 urlpatterns = [
+    # path('', include('articleapp.urls')),
+    path('', ArticleListView.as_view(), name='home'),
     path('admin/', admin.site.urls),
-    path('', include('articleapp.urls')),
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
     path('articles/', include('articleapp.urls')),
