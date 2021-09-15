@@ -1,38 +1,36 @@
 <!-- margin넣을 때 피라미터 2개는 상하, 좌우 즉 상하 2rem 좌우 0rem -->
 <div class="pragmatic_header">
     <div>
-        <a href="{% url 'articleapp:list' %}" style="text-decoration:none; color:black;">
+        <a href="{% url 'articleapp:list' %}">
             <h1 class="pragmatic_logo">Pragmatic</h1>
         </a>    
     </div>
 
     <div class="pragmatic_header_navbar">
-        <a href="{% url 'articleapp:list' %}" class="prgmatic_header_nav" style="text-decoration:none">
+        <a href="{% url 'articleapp:list' %}" class="prgmatic_header_nav">
             <span>Articles</span>
         </a>
 
-        <a href="{% url 'projectapp:list' %}" class="prgmatic_header_nav" style="text-decoration:none">
+        <a href="{% url 'projectapp:list' %}" class="prgmatic_header_nav">
             <span>Projects</span>
         </a>
-
-        <span>nav2</span>
 
         {% if not user.is_authenticated %}
 <!--         style="text-decoration:none"-->
 
-        <a href="{% url 'accountapp:login' %}?next={{ request.path }}" style="text-decoration:none" class="prgmatic_header_nav">
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="prgmatic_header_nav">
             <span>login</span>
         </a>
 
-        <a href="{% url 'accountapp:create' %}" style="text-decoration:none" class="prgmatic_header_nav">
+        <a href="{% url 'accountapp:create' %}" class="prgmatic_header_nav">
             <span>SignUp</span>
         </a>
         {% else %}
-        <a href="{% url 'accountapp:detail' pk=user.pk %}" style="text-decoration:none" class="prgmatic_header_nav">
+        <a href="{% url 'accountapp:detail' pk=user.pk %}" class="prgmatic_header_nav">
             <span>MyPage</span>
         </a>
 <!--        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" style="text-decoration:none">-->
-        <a href="{% url 'accountapp:logout' %}?next={% url 'accountapp:hello_world' %}" style="text-decoration:none" class="prgmatic_header_nav">
+        <a href="{% url 'accountapp:logout' %}?next={% url 'accountapp:hello_world' %}" class="prgmatic_header_nav">
             <span>logout</span>
         </a>
 

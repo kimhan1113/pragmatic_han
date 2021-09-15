@@ -24,11 +24,12 @@
 
 a{
     color:black;
+    text-decoration: none;
 }
 
 /*마우스를 올렸을 때 어떻게 할것인가 설정 hover*/
 a:hover {
-    color:black;
+    color: black;
     text-decoration: none;
 }
 
