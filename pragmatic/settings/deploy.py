@@ -3,11 +3,12 @@ from .base import *
 
 def read_secret(secret_name):
 
-    with open('/run/secrets/' + secret_name) as f:
-        secret = f.read()
-        secret = secret.strip()
-        return secret
+    file = open('/run/secrets/' + secret_name)
+    secret = file.read()
+    secret.lstrip().rstrip()
+    file.close()
 
+    return secret
 
 env = environ.Env(
     # set casting, default value

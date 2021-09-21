@@ -1,0 +1,42 @@
+.pragmatic_logo{
+    font-family: 'Architects Daughter', cursive;
+}
+
+.pragmatic_footer_button{
+    font-size: .9rem;
+}
+
+.pragmatic_footer{
+    text-align: center; 
+    margin-top:2rem;
+}
+
+.pragmatic_header{
+    text-align: center; margin: 2rem 0;
+}
+
+@media screen and (max-width:500px){
+    html {
+        /*웨일에서는 작동안함! 크롬은 됨!!*/
+        font-size: 13px;
+    }
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
+
+/*마우스를 올렸을 때 어떻게 할것인가 설정 hover*/
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.prgmatic_header_nav{
+    margin: 0 0.5rem;
+}
+
+.pragmatic_header_navbar{
+    margin: 1rem 0;
+}
