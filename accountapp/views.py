@@ -19,11 +19,6 @@ has_ownership = [account_ownership_required, login_required]
 
 # Create your views here.
 
-# vscode는 classview 상속받을 떄 generic으로 찾자!!!
-
-# 함수만 된다 즉 클래스 함수(메소드)에서는 안됨!!
-# 기존 코드는 다 주석으로 남겨둔다!!
-
 
 class AccountCreateView(CreateView):
     model = User
